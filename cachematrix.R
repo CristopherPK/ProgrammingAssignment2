@@ -1,7 +1,17 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
+## All my explanation will bring object-oriented concepts and paradigmas.
+## Where the object contains attributes and methods.
+
+## makeCacheMatrix will create a list with these "methods" {'set','get',
+## 'setinverse','getinverse'}, this list will contain two attributes {'x','m'};
+## x : Will store the matrix to be inverted.
+## m : Will store the inverse matrix.
+## set : Must set x to the matrix which you apply.
+## get : Return the x attribute inside the list.
+## setinverse: Must receive the solution through cacheSolve function.
+## getinverse: Return the inverse matrix if already solved. 
 
 makeCacheMatrix <- function(x = matrix()) {
     m <- NULL
@@ -19,6 +29,9 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## Write a short comment describing this function
 
+## cacheSolve function will verify if inverse was already solved, if not, 
+## will solve and cache into m attribute through setinverse method.
+
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
     m <- x$getinverse()
@@ -26,7 +39,7 @@ cacheSolve <- function(x, ...) {
         print("getting cached data")
         return(m)
     }
-    print("is not null")
+    print("is null")
     data <- x$get()
     print("Getting the data")
     m <- solve(a = data)
